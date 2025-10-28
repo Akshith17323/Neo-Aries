@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/Navbar";
+import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const orbitron = Orbitron({
+  variable: "--font-brand",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "Neo Aries",
+  title: "Neo-Aries",
   description: "REBELLIOUS STREETWEAR FOR THE UNDERGROUND CULTURE",
 };
 
@@ -25,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar/>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
