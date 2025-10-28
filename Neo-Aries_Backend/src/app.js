@@ -1,4 +1,8 @@
 const express = require('express')
 const app = express()
 
-module.exports = app
+app.get('/',(req,res)=>{
+    res.send('Neo-Aries Backend is running')
+})
+
+module.exports = app;
